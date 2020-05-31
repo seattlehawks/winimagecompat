@@ -11,7 +11,7 @@ Here are two alternate methods to automate setting labels for worker nodes conta
 ### Powershell script to add engine label
 Docker engine labels are created with entries in the Docker [daemon configuration file](https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-configuration-file). ```enginelabel.ps1``` creates an engine label named ```engine.labels.windowsversion``` with a value of the Windows version in use in the form of ```major.minor.build.revision```.
 
-The script must be run on the Windows node and is intended for use as a step the node provisioning process.
+The script must be run on the Windows node and is intended for use as a step in the node provisioning process.
 
 ### UCP API to set node labels
 The Universal Control Plane (UCP) API allows setting node labels equivalent to the ```docker node label``` CLI command. ```nodelabel.py``` is a Python script that takes a Windows version as a parameter and creates a ```com.docker.ucp.node.windowsversion``` node label with the specified value on all Windows nodes in the cluster where it does not exist.
